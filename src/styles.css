@@ -1,0 +1,94 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background: #333;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-links li .cta {
+    background: #f90;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+.hero {
+    background: url('./assets/images/hero.png') no-repeat center center/cover;
+    color: blue;
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+.hero {
+    position: relative;
+    background: url('./assets/images/hero.png') no-repeat center center/cover;
+    padding: 5rem 2rem;
+    text-align: center;
+    color: white; /* Change the text color to white for better contrast */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6); /* Darker semi-transparent black overlay */
+    z-index: 1; /* Ensure the overlay is above the background image */
+}
+
+.hero-content {
+    max-width: 600px;
+    margin: auto;
+    position: relative;
+    z-index: 2; /* Ensure the text is above the overlay */
+}
+
+.cta-button {
+    color: yellow; /* Use a contrasting color for the hyperlink */
+    text-decoration: underline;
+}
+
+.features, .about, .contact {
+    padding: 2rem;
+    text-align: center;
+}
+
+.features .feature-cards {
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+}
+
+.feature-cards .card {
+    background: #f4f4f4;
+    padding: 1rem;
+    border-radius: 10px;
+    flex: 1;
+}
+
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}
