@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { getFirestore, collection, query, where, getDocs, doc, deleteDoc } from 'firebase/firestore';
+import { getFirestore, collection, query, getDocs, doc, deleteDoc } from 'firebase/firestore';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { useNavigate, Link } from 'react-router-dom';
 import './ViewListingsComponent.css';
@@ -55,10 +55,16 @@ const ViewListingsComponent = () => {
   return (
     <div className="view-listings-container">
       <h2>Your Listings</h2>
+      <h4>
+        {user && (
+          <Link to={`/public-listings/${user.uid}`} className="view-link">Public URL</Link>
+        )}
+      </h4>
       <div className="listings-grid">
         {listings.map((listing) => (
           <div key={listing.id} className="listing-card">
             <h3>{listing.title}</h3>
+            <Link to={`/public-listings/${user.uid}`} className="public-url">View Public URL</Link>
             <p>{listing.description}</p>
             <Link to={`/view-listing/${listing.id}`} className="view-link">View</Link>
             <button onClick={() => handleDeleteListing(listing.id)} className="delete-button">Delete</button>

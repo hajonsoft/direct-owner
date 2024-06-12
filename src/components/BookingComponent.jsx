@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { getFirestore, doc, getDoc, collection, addDoc } from 'firebase/firestore';
 import { useParams, useNavigate } from 'react-router-dom';
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import './BookingComponent.css';
 
 const BookingComponent = () => {
@@ -10,13 +12,21 @@ const BookingComponent = () => {
     name: '',
     email: '',
     phone: '',
-    paymentMethod: 'stripe', // default payment method
+    startDate: '',
+    endDate: '',
+    adults: 1,
+    children: 0,
+    infants: 0,
+    pets: false,
+    paymentMethod: 'stripe',
   });
   const navigate = useNavigate();
   const db = getFirestore();
 
   useEffect(() => {
-    fetchListing(userId, listingId);
+    if (userId && listingId) {
+      fetchListing(userId, listingId);
+    }
   }, [userId, listingId]);
 
   const fetchListing = async (userId, listingId) => {
@@ -30,7 +40,11 @@ const BookingComponent = () => {
   };
 
   const handleChange = (e) => {
-    setGuestDetails({ ...guestDetails, [e.target.name]: e.target.value });
+    const { name, value, type, checked } = e.target;
+    setGuestDetails({
+      ...guestDetails,
+      [name]: type === 'checkbox' ? checked : value,
+    });
   };
 
   const handleBooking = async () => {
@@ -55,11 +69,13 @@ const BookingComponent = () => {
       <div className="listing-details">
         <p>{listing.description}</p>
         <p>Price: {listing.price}</p>
-        <div className="listing-images">
+        <Carousel className="listing-images" showThumbs={false}>
           {listing.images.map((url, index) => (
-            <img key={index} src={url} alt={`Listing ${index}`} />
+            <div key={index}>
+              <img src={url} alt={`Listing ${index}`} />
+            </div>
           ))}
-        </div>
+        </Carousel>
       </div>
       <div className="guest-details-form">
         <h3>Guest Details</h3>
@@ -91,6 +107,63 @@ const BookingComponent = () => {
             value={guestDetails.phone}
             onChange={handleChange}
             placeholder="Enter your phone number"
+          />
+        </label>
+        <label>
+          Start Date
+          <input
+            type="date"
+            name="startDate"
+            value={guestDetails.startDate}
+            onChange={handleChange}
+          />
+        </label>
+        <label>
+          End Date
+          <input
+            type="date"
+            name="endDate"
+            value={guestDetails.endDate}
+            onChange={handleChange}
+          />
+        </label>
+        <label>
+          Adults
+          <input
+            type="number"
+            name="adults"
+            value={guestDetails.adults}
+            onChange={handleChange}
+            min="1"
+          />
+        </label>
+        <label>
+          Children
+          <input
+            type="number"
+            name="children"
+            value={guestDetails.children}
+            onChange={handleChange}
+            min="0"
+          />
+        </label>
+        <label>
+          Infants
+          <input
+            type="number"
+            name="infants"
+            value={guestDetails.infants}
+            onChange={handleChange}
+            min="0"
+          />
+        </label>
+        <label>
+          Pets
+          <input
+            type="checkbox"
+            name="pets"
+            checked={guestDetails.pets}
+            onChange={handleChange}
           />
         </label>
         <label>

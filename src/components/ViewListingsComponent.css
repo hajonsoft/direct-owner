@@ -1,69 +1,74 @@
 .view-listings-container {
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
-  }
-  
-  .view-listings-container h2 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .listings-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-  
-  .listing-card {
-    flex: 1 1 calc(33% - 20px);
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 10px;
-    text-align: center;
-    background-color: #f9f9f9;
-    position: relative;
-  }
-  
-  .listing-card h3 {
-    margin: 0;
-    font-size: 1.2em;
-  }
-  
-  .listing-card p {
-    font-size: 1em;
-    color: #666;
-  }
-  
-  .view-link {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 5px 10px;
-    background-color: #007bff;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-  }
-  
-  .view-link:hover {
-    background-color: #0056b3;
-  }
-  
-  .delete-button {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 5px 10px;
-    background-color: #dc3545;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .delete-button:hover {
-    background-color: #c82333;
-  }
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.view-listings-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.view-listings-container h4 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.listings-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.listing-card {
+  flex: 1 1 calc(33% - 20px);
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  background-color: #f9f9f9;
+  position: relative;
+}
+
+.listing-card h3 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.listing-card p {
+  font-size: 1em;
+  color: #666;
+}
+
+.view-link, .public-url {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.view-link:hover, .public-url:hover {
+  background-color: #0056b3;
+}
+
+.delete-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background-color: #c82333;
+}
