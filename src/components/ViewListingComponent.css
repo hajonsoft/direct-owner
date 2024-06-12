@@ -1,0 +1,31 @@
+.view-listing-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  
+  .view-listing-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .view-listing-container p {
+    font-size: 1em;
+    margin: 10px 0;
+  }
+  
+  .listing-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .listing-images img {
+    flex: 1 1 calc(33% - 10px);
+    max-width: 100%;
+    border-radius: 5px;
+  }

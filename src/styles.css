@@ -29,13 +29,17 @@ header {
     background: #f90;
     padding: 0.5rem 1rem;
     border-radius: 5px;
+    text-decoration: none;
+    color: white;
 }
 
-.hero {
-    background: url('./assets/images/hero.png') no-repeat center center/cover;
-    color: blue;
-    padding: 5rem 2rem;
-    text-align: center;
+.nav-links li button {
+    background: #f90;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
 }
 
 .hero {
@@ -91,4 +95,39 @@ footer {
     color: white;
     text-align: center;
     padding: 1rem 0;
+}
+
+.signup-container, .login-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.signup-container h2, .login-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.google-signin-button, .google-login-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #db4437;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.google-signin-button:hover, .google-login-button:hover {
+    background-color: #c33d2e;
+}
+
+.error {
+    color: red;
+    text-align: center;
+    margin-bottom: 10px;
 }
